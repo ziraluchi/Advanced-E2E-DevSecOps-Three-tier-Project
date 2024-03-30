@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set your AWS region and EKS cluster name
-AWS_REGION="us-east-1"
+AWS_REGION="us-west-2"
 CLUSTER_NAME="Three-Tier-K8s-EKS-Cluster"
 
 # Set the desired number of worker nodes
