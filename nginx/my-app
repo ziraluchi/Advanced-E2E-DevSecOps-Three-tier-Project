@@ -1,5 +1,5 @@
 upstream myapp{
-    server k8s-threetie-mainlb-1dd958d0ec-2015299145.us-west-2.elb.amazonaws.com:3000;
+    server 192.168.0.0:3000;
 }
 
 server{
