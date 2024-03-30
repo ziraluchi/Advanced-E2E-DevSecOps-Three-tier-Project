@@ -10,7 +10,7 @@ export const options = {
 };
 
 export default function () {
-  const res = http.get('https://my-app.duckdns.org');
+  const res = http.get('https://myapp-app.duckdns.org');
   check(res, { 'status was 200': (r) => r.status == 200 });
   sleep(1);
 }
