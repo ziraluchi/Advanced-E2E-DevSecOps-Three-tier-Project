@@ -8,7 +8,7 @@ curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-cont
 aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
 
 # Associate IAM OIDC provider
-eksctl utils associate-iam-oidc-provider --region=us-east-1 --cluster=Three-Tier-K8s-EKS-Cluster --approve
+eksctl utils associate-iam-oidc-provider --region=us-west-2 --cluster=Three-Tier-K8s-EKS-Cluster --approve
 
 # Create IAM service account for aws-load-balancer-controller
 eksctl create iamserviceaccount \
@@ -16,9 +16,9 @@ eksctl create iamserviceaccount \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
   --role-name AmazonEKSLoadBalancerControllerRole \
-  --attach-policy-arn=arn:aws:iam::4901-0829-5743:policy/AWSLoadBalancerControllerIAMPolicy \
+  --attach-policy-arn=arn:aws:iam::2111-2569-3531:policy/AWSLoadBalancerControllerIAMPolicy \
   --approve \
-  --region=us-east-1
+  --region=us-west-2
 
 # Install Helm (if not installed)
 if ! command -v helm &> /dev/null; then
