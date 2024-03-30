@@ -1,9 +1,9 @@
 upstream myapp{
-    server a3082cf5949d04861b17e97adc2417c2-1071104462.us-east-1.elb.amazonaws.com:3000;
+    server k8s-threetie-mainlb-1dd958d0ec-2015299145.us-west-2.elb.amazonaws.com:3000;
 }
 
 server{
-    server_name my-app.duckdns.org;
+    server_name myapp-app.duckdns.org;
 
     access_log  /var/log/nginx/app.access.log;
     error_log   /var/log/nginx/app.error.log;
@@ -24,8 +24,8 @@ server{
 
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/my-app.duckdns.org/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/my-app.duckdns.org/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/myapp-app.duckdns.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/myapp-app.duckdns.org/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
@@ -33,13 +33,13 @@ server{
 
 
 server{
-    if ($host = my-app.duckdns.org) {
+    if ($host = myapp-app.duckdns.org) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
 
     listen      80;
-    server_name my-app.duckdns.org;
+    server_name myapp-app.duckdns.org;
     return 404; # managed by Certbot
 
 
