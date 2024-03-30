@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Replace with your desired domain and file path
-DOMAIN="app-sonarqube.duckdns.org"
+DOMAIN="mysonarqube-app.duckdns.org"
 CONFIG_FILE="/etc/nginx/sites-available/$DOMAIN"
 
 # Create Nginx configuration file
@@ -12,7 +12,7 @@ upstream sonarqube{
 
 server{
     listen      80;
-    server_name app-sonarqube.duckdns.org;
+    server_name mysonarqube-app.duckdns.org;
 
     access_log  /var/log/nginx/sonarqube.access.log;
     error_log   /var/log/nginx/sonarqube.error.log;
