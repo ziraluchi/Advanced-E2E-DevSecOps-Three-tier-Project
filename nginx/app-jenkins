@@ -4,7 +4,7 @@ upstream jenkins{
 
 server{
     listen      80;
-    server_name app-jenkins.duckdns.org;
+    server_name myjenkins-app.duckdns.org;
 
     access_log  /var/log/nginx/jenkins.access.log;
     error_log   /var/log/nginx/jenkins.error.log;
